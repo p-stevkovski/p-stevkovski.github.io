@@ -1,0 +1,33 @@
+# JetBrains IDE folders and files
+.idea/
+*.iml
+/shelf/
+/workspace.xml
+/vcs.xml
+/modules.xml
+/dataSources/
+dataSources.local.xml
+
+# Editor-based HTTP Client
+/httpRequests/
+
+# macOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+
+# Node-related
+node_modules/
+dist/
+build/
+
+# Environment variables
+/.env
+
+# Logs
+*.log
+
+# Backup files
+*.bak
+*.tmp
