@@ -117,12 +117,10 @@ body{
 }
 
 .content-image img {
-    max-height: 30rem;
-    max-width: 100%;
-    width: auto;
+    width: 28rem;
     height: auto;
-    border: 0.25rem solid #b7a99e;
     object-fit: contain;
+    border: 0.25rem solid #b7a99e;
     display: block;
 }
 
@@ -209,7 +207,7 @@ body{
 }
 
 .nav-toggle.open {
-    transform: rotate(90deg);
+    transform: none;
 }
 
 .nav-links li {
@@ -226,10 +224,10 @@ body{
     }
     .content-image {
         align-items: flex-start;
+        padding-left: 1.5rem;
     }
     .content-image img {
-        width: 14rem;
-        height: 14rem;
+        width: 18rem;
     }
     .content-text h1 {
         font-size: 2.5rem;
@@ -243,22 +241,32 @@ body{
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
+    .content-image img {
+        width: 16rem;
+    }
+}
+
+@media (max-width: 768px) {
     .content, .menu {
-        width: 100%;
-        padding: 1.5rem;
-        margin: 1rem auto;
+        width: 95%;
+    }
+    .menu {
+        padding: 0;
+        margin: 0.75rem auto 0.25rem;
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
     }
     .content {
-        flex-direction: column;
-        gap: 1.5rem;
+        padding: 1.5rem;
+        margin: 0.25rem auto 1rem;
     }
     .content-image {
-        align-items: flex-start;
+        padding-left: 1.5rem;
     }
     .content-image img {
-        width: 10rem;
-        height: 10rem;
+        width: 14rem;
     }
     .content-text h1 {
         font-size: 2rem;
@@ -267,11 +275,6 @@ body{
     .contact-text ul li a {
         font-size: 1rem;
         line-height: 1.5;
-    }
-    .menu {
-        flex-direction: column;
-        align-items: flex-start;
-        position: relative;
     }
     .nav-toggle {
         display: block;
@@ -300,11 +303,15 @@ body{
 
 @media (max-width: 480px) {
     .content, .menu {
-        padding: 1rem;
-        margin: 0.5rem auto;
+        width: 95%;
+    }
+    .menu {
+        padding: 0;
+        margin: 0.25rem auto 0.25rem;
     }
     .content {
-        gap: 1rem;
+        padding: 1rem;
+        margin: 0.25rem auto 0.5rem;
         border-width: 0.0625rem;
     }
     .content-image {
@@ -324,5 +331,12 @@ body{
     .education-block {
         padding-bottom: 0.5rem;
         margin-bottom: 0.5rem;
+        border-bottom-width: 0.0625rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .contact-text ul li a {
+        font-size: 0.95rem;
     }
 }
