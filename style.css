@@ -113,7 +113,7 @@ body{
     flex: 0.9;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .content-image img {
@@ -206,28 +206,23 @@ body{
     transition: transform 0.3s ease;
 }
 
-.nav-toggle.open {
-    transform: none;
-}
-
 .nav-links li {
     opacity: 1;
     transform: translateY(0);
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1440px) {
     .content, .menu {
         width: 95%;
         padding: 2.5rem;
         margin: 2.5rem auto;
     }
     .content-image {
-        align-items: flex-start;
         padding-left: 1.5rem;
     }
     .content-image img {
-        width: 18rem;
+        width: 20rem;
     }
     .content-text h1 {
         font-size: 2.5rem;
@@ -238,6 +233,12 @@ body{
     .contact-text ul li a {
         font-size: 1.25rem;
         line-height: 1.5;
+    }
+}
+
+@media (max-width: 1200px) {
+    .content-image img {
+        width: 18rem;
     }
 }
 
