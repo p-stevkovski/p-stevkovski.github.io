@@ -72,6 +72,10 @@ body{
     color: #281f15 !important;
 }
 
+.nav-links li a.current:hover {
+    color: #281f15;
+}
+
 .nav-links li a.current::after {
     content: '';
     position: absolute;
@@ -99,6 +103,13 @@ body{
     display: flex;
     flex: 1.1;
     flex-direction: column;
+}
+.about-text p {
+    margin-bottom: 1em;
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
 }
 
 .content-image {
@@ -195,7 +206,6 @@ body{
     padding-bottom: 0;
 }
 
-/* Responsive adjustments */
 @media (max-width: 1200px) {
     .content, .menu {
         width: 98%;
@@ -290,8 +300,7 @@ body{
     }
     .content-image,
     .awards-image {
-        height: 8rem;
-        margin-bottom: 0.5rem;
+        display: none;
     }
     .content-text h1 {
         font-size: 1.125rem;
