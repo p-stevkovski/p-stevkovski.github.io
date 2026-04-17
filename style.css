@@ -22,11 +22,15 @@ body{
     font-display: swap;
 }
 
+.hidden {
+    display: none !important;
+}
+
 .menu{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: min(80%, 1400px);
     margin: 2.5rem auto;
 }
 
@@ -40,7 +44,7 @@ body{
 .nav-links li a {
     color: #281f15;
     text-decoration: none;
-    font-size: 1.875rem;
+    font-size: clamp(1rem, 1.5vw, 1.875rem);
     position: relative;
     transition: color 0.3s ease;
     font-weight: bold;
@@ -87,18 +91,20 @@ body{
 }
 
 .content{
-    width: 80%;
-    margin: 6.25rem auto;
+    width: min(80%, 1400px);
+    margin: 4rem auto;
     display: flex;
     border: 0.125rem solid #b7a99e;
-    padding: 3.125rem;
+    padding: clamp(1.5rem, 3vw, 3.125rem);
     justify-content: space-between;
+    gap: 2rem;
 }
 
 .content-text{
     display: flex;
-    flex: 1.1;
+    flex: 1;
     flex-direction: column;
+    min-width: 0;
 }
 
 .about-text p {
@@ -110,14 +116,15 @@ body{
 }
 
 .content-image {
-    flex: 0.9;
+    flex: 0 0 auto;
+    padding: 0 0 0 2rem;
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
 }
 
 .content-image img {
-    width: 28rem;
+    width: clamp(8rem, 16vw, 18rem);
     height: auto;
     object-fit: contain;
     border: 0.25rem solid #b7a99e;
@@ -125,17 +132,18 @@ body{
 }
 
 .content-text h1{
-    font-size: 3.125rem;
+    font-size: clamp(1.5rem, 3vw, 3.125rem);
+    margin-bottom: 0.5em;
 }
 
 .content-text p{
-    font-size: 1.875rem;
+    font-size: clamp(0.9rem, 1.4vw, 1.875rem);
+    line-height: 1.6;
 }
 
 .contact-text ul {
     list-style: none;
     padding-left: 0;
-    font-size: 1.5625rem;
 }
 
 .contact-icon {
@@ -143,6 +151,7 @@ body{
     height: 2rem;
     vertical-align: middle;
     margin-right: 0.625rem;
+    flex-shrink: 0;
 }
 
 .contact-text ul li {
@@ -157,15 +166,12 @@ body{
 
 .contact-text ul li a {
     color: #281f15;
-    font-size: 1.875rem;
+    font-size: clamp(0.9rem, 1.4vw, 1.875rem);
     text-decoration: none;
-    line-height: 2rem;
+    line-height: 1.5;
     transition: color 0.3s ease;
     cursor: pointer;
-}
-
-.contact-text ul li:last-child a {
-    padding-top: 0.375rem;
+    word-break: break-word;
 }
 
 .contact-text ul li a:hover {
@@ -203,49 +209,12 @@ body{
     font-size: 2rem;
     cursor: pointer;
     color: #281f15;
-    transition: transform 0.3s ease;
 }
 
 .nav-links li {
     opacity: 1;
     transform: translateY(0);
     transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-@media (max-width: 1440px) {
-    .content, .menu {
-        width: 95%;
-        padding: 2.5rem;
-        margin: 2.5rem auto;
-    }
-    .content-image {
-        padding-left: 1.5rem;
-    }
-    .content-image img {
-        width: 20rem;
-    }
-    .content-text h1 {
-        font-size: 2.5rem;
-        line-height: 1.2;
-    }
-    .content-text p,
-    .nav-links li a,
-    .contact-text ul li a {
-        font-size: 1.25rem;
-        line-height: 1.5;
-    }
-}
-
-@media (max-width: 1200px) {
-    .content-image img {
-        width: 18rem;
-    }
-}
-
-@media (max-width: 900px) {
-    .content-image img {
-        width: 16rem;
-    }
 }
 
 @media (max-width: 768px) {
@@ -262,15 +231,10 @@ body{
     .content {
         padding: 1.5rem;
         margin: 0.25rem auto 1rem;
-    }
-    .content-image {
-        padding-left: 1.5rem;
-    }
-    .content-image img {
-        width: 14rem;
+        gap: 1rem;
     }
     .content-text h1 {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
     .content-text p,
     .contact-text ul li a {
@@ -288,6 +252,9 @@ body{
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease;
+    }
+    .nav-links li a {
+        font-size: 1rem;
     }
     .nav-links.open {
         max-height: 20rem;
@@ -338,6 +305,6 @@ body{
 
 @media (max-width: 360px) {
     .contact-text ul li a {
-        font-size: 0.95rem;
+        font-size: 0.875rem;
     }
 }
