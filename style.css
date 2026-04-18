@@ -285,6 +285,7 @@ body{
     }
     .nav-links li {
         text-align: right;
+        position: relative;
     }
 
     .nav-links li:first-child {
@@ -299,10 +300,25 @@ body{
         font-size: 1.25rem;
     }
 
+    .nav-links li a.current::after {
+        width: 0.1875rem;
+        height: 1rem;
+        left: -0.75rem;
+        top: 0;
+        bottom: auto;
+        transform: none;
+        max-width: unset;
+        min-width: unset;
+        background-color: #8b7d71;
+    }
+
+    .nav-links li a::after {
+        transition: none;
+    }
+
     .menu {
         padding: 0;
-        margin: 0.25rem auto 0.25rem;
-        margin-right: 0.5rem;
+        margin: 0.25rem 0.5rem 0.25rem auto;
         align-items: flex-end;
     }
     .content {
@@ -345,5 +361,14 @@ body{
 @media (max-width: 360px) {
     .contact-text ul li a {
         font-size: 0.875rem;
+    }
+}
+
+@media (hover: none) {
+    .nav-links li a:hover::after {
+        transform: scaleX(0);
+    }
+    .nav-links li a:hover {
+        color: #281f15;
     }
 }
