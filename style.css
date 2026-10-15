@@ -389,14 +389,14 @@ a:focus:not(:focus-visible) {
                 background 300ms var(--ease-smooth);
 }
 
-.glass-card:hover {
+.glass-card:is(a, button):hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06),
                 0 2px 8px rgba(0, 0, 0, 0.03);
     background: var(--glass-bg-hover);
 }
 
-.glass-card:active {
+.glass-card:is(a, button):active {
     transform: translateY(0) scale(0.98);
     transition: transform 100ms ease-out;
 }
@@ -912,11 +912,11 @@ a:focus:not(:focus-visible) {
         transform: none;
     }
 
-    .glass-card:hover {
+    .glass-card:is(a, button):hover {
         transform: none;
     }
 
-    .glass-card:active {
+    .glass-card:is(a, button):active {
         transform: none;
     }
 
@@ -990,7 +990,7 @@ a:focus:not(:focus-visible) {
    Remove hover-only effects on touch
    ============================================================ */
 @media (hover: none) {
-    .glass-card:hover {
+    .glass-card:is(a, button):hover {
         transform: none;
         box-shadow: none;
         background: var(--glass-bg);
@@ -1055,7 +1055,7 @@ a:focus:not(:focus-visible) {
         --navbar-bg: rgba(16, 16, 18, 0.8); --navbar-bg-scrolled: rgba(16, 16, 18, 0.94);
     }
     .project-icon { background: rgba(41, 151, 255, 0.14); }
-    .glass-card:hover { box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4); }
+    .glass-card:is(a, button):hover { box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4); }
 }
 @media (prefers-color-scheme: dark) and (prefers-reduced-transparency: reduce) {
     :root { --glass-bg: rgba(44, 44, 46, 0.98); --glass-bg-hover: #3a3a3c; --navbar-bg: rgba(16, 16, 18, 0.98); --navbar-bg-scrolled: #101012; }
